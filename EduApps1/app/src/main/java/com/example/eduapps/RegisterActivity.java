@@ -21,7 +21,7 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent;
-                intent = new Intent(RegisterActivity.this, TeacherHomeActivity.class);
+                intent = new Intent(RegisterActivity.this, SplashRegister.class);
                 intent.putExtra("valor", "hola");
                 startActivity(intent);
             }

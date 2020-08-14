@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".TeacherHomeActivity">
+    tools:context=".SplashRegister">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -17,6 +17,12 @@
             android:layout_height="174dp"
             app:srcCompat="@drawable/eduapps" />
 
-    </LinearLayout>
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Su registro ha sido exitoso. Será redirigido en breve."
+            android:textSize="36sp" />
 
+    </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>
