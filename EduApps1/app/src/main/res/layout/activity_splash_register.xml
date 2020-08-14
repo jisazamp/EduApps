@@ -21,7 +21,9 @@
             android:id="@+id/textView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:gravity="center_horizontal"
             android:text="Su registro ha sido exitoso. Será redirigido en breve."
+            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
             android:textSize="36sp" />
 
     </LinearLayout>
