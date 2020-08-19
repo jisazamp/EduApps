@@ -15,7 +15,7 @@
         <ImageView
             android:id="@+id/eduapps_logo"
             android:layout_width="match_parent"
-            android:layout_height="260dp"
+            android:layout_height="200dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/eduapps" />
 
@@ -25,14 +25,13 @@
             android:text="Bienvenido a EduApps"
             android:textStyle="bold"
             android:layout_gravity="center"
-            android:layout_marginTop="20dp"
             android:textSize="25dp"
             />
 
         <Button
             android:id="@+id/loginButton"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:text="Login"
             android:textColor="#fff"
@@ -41,12 +40,12 @@
 
         <Button
             android:id="@+id/registroButton"
-            android:layout_width="300dp"
-            android:layout_height="60dp"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
             android:layout_gravity="center"
             android:text="Registro"
             android:textColor="#fff"
-            android:layout_marginTop="30dp"
+            android:layout_marginTop="10dp"
             android:background="@drawable/button" />
 
     </LinearLayout>
