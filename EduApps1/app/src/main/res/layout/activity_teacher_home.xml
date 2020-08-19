@@ -2,48 +2,69 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
     tools:context=".TeacherHomeActivity">
 
-    <LinearLayout
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical">
-
-        <ImageView
-            android:id="@+id/eduapps_logo"
+        android:layout_height="match_parent">
+        <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="174dp"
-            app:srcCompat="@drawable/eduapps" />
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:layout_margin="20dp">
 
-        <TextView
-            android:id="@+id/textView2"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="SESIONES DE CLASE"
-            android:textAppearance="@style/TextAppearance.AppCompat.Display1"
-            android:textSize="24sp"
-            android:textStyle="bold" />
+            <ImageView
+                android:id="@+id/eduapps_logo"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:layout_gravity="center"
+                app:srcCompat="@drawable/eduapps" />
 
-        <com.google.android.material.tabs.TabLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            ...
-
-            <com.google.android.material.tabs.TabItem
+            <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Creadas" />
+                android:layout_gravity="center"
+                android:text="Sesiones de clase"
+                android:textSize="25dp"
+                android:textStyle="bold" />
 
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Publicadas" />
+            <com.google.android.material.tabs.TabLayout
+                android:layout_width="match_parent"
+                android:layout_height="30dp">
 
-        </com.google.android.material.tabs.TabLayout>
-    </LinearLayout>
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Publicadas" />
+
+                <com.google.android.material.tabs.TabItem
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Creadas" />
+            </com.google.android.material.tabs.TabLayout>
+
+            <ScrollView
+                android:layout_width="match_parent"
+                android:layout_height="320dp"
+                android:layout_margin="20dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical" />
+            </ScrollView>
+
+            <Button
+                android:id="@+id/iniciarSesionButton"
+                android:layout_width="220dp"
+                android:layout_height="40dp"
+                android:layout_gravity="center"
+                android:background="@drawable/button"
+                android:text="Agregar sesión de clase"
+                android:textColor="#fff" />
+        </LinearLayout>
+    </ScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
