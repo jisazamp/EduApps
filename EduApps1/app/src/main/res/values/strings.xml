@@ -4,4 +4,18 @@
         <item>Básica</item>
         <item>Media</item>
     </string-array>
+
+    <string-array name="sesiones">
+        <item>Grecia holinística</item>
+        <item>Juegos Olímpicos antigüos</item>
+        <item>Juegos Olímpicos Modernos</item>
+        <item>Juegos Olímpicos Modernos</item>
+    </string-array>
+    
+    <string-array name="descripcion">
+        <item>Esta es una descripción.</item>
+        <item>Esta es una descripción.</item>
+        <item>Esta es una descripción.</item>
+        <item>Esta es una descripción.</item>
+    </string-array>
 </resources>

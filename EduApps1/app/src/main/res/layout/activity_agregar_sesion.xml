@@ -133,6 +133,7 @@
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
                     android:background="@drawable/button"
+                    android:layout_marginBottom="30dp"
                     android:text="Agregar"
                     android:textColor="#fff" />
 
@@ -141,6 +142,7 @@
                     android:layout_width="130dp"
                     android:layout_height="40dp"
                     android:layout_marginTop="20dp"
+                    android:layout_marginBottom="30dp"
                     android:layout_marginLeft="10dp"
                     android:background="@drawable/button"
                     android:text="Cancelar"

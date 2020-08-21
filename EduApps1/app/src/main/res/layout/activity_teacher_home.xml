@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".TeacherHomeActivity">
 
-    <ScrollView
+    <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">
         <LinearLayout
@@ -50,21 +50,22 @@
                 android:layout_height="320dp"
                 android:layout_margin="20dp">
 
-                <LinearLayout
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerView"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:orientation="vertical" />
+                    android:layout_height="wrap_content" />
             </ScrollView>
 
             <Button
                 android:id="@+id/agregarSesionButton"
                 android:layout_width="220dp"
                 android:layout_height="40dp"
+                android:layout_marginBottom="30dp"
                 android:layout_gravity="center"
                 android:background="@drawable/button"
                 android:text="Agregar sesión de clase"
                 android:textColor="#fff" />
         </LinearLayout>
-    </ScrollView>
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

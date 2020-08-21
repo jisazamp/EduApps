@@ -9,22 +9,26 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_margin="20dp">
 
         <ImageView
             android:id="@+id/eduapps_logo"
             android:layout_width="match_parent"
-            android:layout_height="174dp"
+            android:layout_height="200dp"
+            android:layout_gravity="center"
             app:srcCompat="@drawable/eduapps" />
 
         <TextView
-            android:id="@+id/textView"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:gravity="center_horizontal"
-            android:text="Su registro ha sido exitoso. Será redirigido en breve."
-            android:textAppearance="@style/TextAppearance.AppCompat.Display3"
-            android:textSize="36sp" />
+            android:layout_gravity="center"
+            android:layout_marginTop="40dp"
+            android:gravity="center"
+            android:text="Su registro ha sido exitoso, será redirigido en breve"
+            android:textSize="25dp"
+            android:textStyle="bold" />
 
     </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
