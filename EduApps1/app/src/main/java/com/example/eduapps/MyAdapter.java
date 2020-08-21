@@ -15,11 +15,19 @@ import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.recyclerview.widget.RecyclerView;
 
+
+/*
+ * Clase auxiliar para popular el RecyclerView
+ * del TeacherHomeActivity.
+ */
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.MyViewHolder> {
 
+    // declaración de variables
     String data1[], data2[];
     Context context;
 
+    // constructor del adaptador
     public MyAdapter(Context ct, String s1[], String s2[]) {
         context = ct;
         data1 = s1;

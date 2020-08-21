@@ -14,8 +14,8 @@
 
         <ImageView
             android:id="@+id/eduapps_logo"
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_width="283dp"
+            android:layout_height="124dp"
             android:layout_gravity="center"
             app:srcCompat="@drawable/eduapps" />
 

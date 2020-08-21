@@ -7,9 +7,19 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/*
+ * Esta es la vista de inicio de la aplicación, donde se le
+ * presentan al usuario dos opciones, iniciar sesión o registrarse.
+ */
+
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     public void procesarEvento(int opc) {
+        /*
+         * Método que tiene como parámetro un entero, que es el
+         * id del botón que quiero usar. No tiene salidas.
+         * Inicializa el intent de la opción seleccionada por el usuario.
+         */
 
         Intent intent;
 
@@ -39,31 +49,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         // set del listener a los botones
         btn_login.setOnClickListener(this);
         btn_registro.setOnClickListener(this);
-
-        /*
-        btn_login.setOnClickListener(new View.OnClickListener() {
-
-            // metodo abstracto que tengo que implementar
-            @Override
-            public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(MainActivity.this, LoginActivity.class);
-                intent.putExtra("valor", "hola");
-                startActivity(intent);
-            }
-        });
-
-        btn_registro.setOnClickListener(new View.OnClickListener() {
-
-            // metodo abstracto que tengo que implementar
-            @Override
-            public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(MainActivity.this, RegisterActivity.class);
-                intent.putExtra("valor", "hola");
-                startActivity(intent);
-            }
-        }); */
     }
 
     @Override

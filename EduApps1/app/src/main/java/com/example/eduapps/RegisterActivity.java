@@ -7,6 +7,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+/*
+ * Esta es la vista para registro del usuario.
+ * Después de ingresar los datos de registro y presionar el botón de
+ * "Registrar" lleva el usuario a una pantalla de Splash confirmando
+ * su registro y luego llevándolo al Home.
+ */
+
 public class RegisterActivity extends AppCompatActivity {
 
     @Override
@@ -22,8 +29,8 @@ public class RegisterActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(RegisterActivity.this, SplashRegister.class);
-                intent.putExtra("valor", "hola");
                 startActivity(intent);
+                finish();
             }
         });
     }

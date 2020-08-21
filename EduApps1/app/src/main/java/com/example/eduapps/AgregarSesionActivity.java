@@ -18,8 +18,14 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Calendar;
 
+/*
+ * Esta es la vista donde están los campos necesarios para registrar
+ * una nueva sesión de clase.
+ */
+
 public class AgregarSesionActivity extends AppCompatActivity {
 
+    // declaracion de variables
     Spinner spinner, spinner1;
     private static final String TAG = "AgregarSesionActivity";
     private TextView mDisplayDate;
@@ -31,6 +37,7 @@ public class AgregarSesionActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_sesion);
 
+        // intent de los botones
         Button btn_agregar = (Button)findViewById(R.id.agregarButton);
         btn_agregar.setOnClickListener(new View.OnClickListener() {
 
@@ -38,7 +45,6 @@ public class AgregarSesionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 intent = new Intent(AgregarSesionActivity.this, TeacherHomeActivity.class);
-                intent.putExtra("valor", "hola");
                 startActivity(intent);
             }
         });
@@ -50,29 +56,35 @@ public class AgregarSesionActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 intent = new Intent(AgregarSesionActivity.this, TeacherHomeActivity.class);
-                intent.putExtra("valor", "hola");
                 startActivity(intent);
             }
         });
 
+        // declaracion de los spinner
         spinner = findViewById(R.id.spinner1);
         spinner1 = findViewById(R.id.spinner2);
 
+        // datos "quemados" para popular el spinner
         String[] value = {"Básica", "Media"};
         ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(value));
         ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.style_spinner, arrayList);
         spinner.setAdapter(arrayAdapter);
 
+        // datos "quemados" para popular el spinner1
         String[] value1 = {"1", "2"};
         ArrayList<String> arrayList1 = new ArrayList<>(Arrays.asList(value1));
         ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<>(this, R.layout.style_spinner, arrayList1);
         spinner1.setAdapter(arrayAdapter1);
 
+        // inicialización de la variable para seleccionar la fecha de inicio
+        // de la sesión de clase
         mDisplayDate = (TextView) findViewById(R.id.tvDate);
 
+        // ClickListener que abre una ventana para seleccionar la fecha
         mDisplayDate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                // inicializamos la instancia para que muestre la fecha actual
                 Calendar cal = Calendar.getInstance();
                 int year = cal.get(Calendar.YEAR);
                 int month = cal.get(Calendar.MONTH);
@@ -92,7 +104,7 @@ public class AgregarSesionActivity extends AppCompatActivity {
         mDateSetListener = new DatePickerDialog.OnDateSetListener() {
             @Override
             public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-
+                // TO-DO
             }
         };
     }

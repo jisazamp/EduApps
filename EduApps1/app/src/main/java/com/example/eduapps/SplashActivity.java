@@ -9,6 +9,12 @@ import android.os.Looper;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+/*
+ * Esta es la vista para el splash que se
+ * muestra al iniciar la aplicación.
+ * Lleva al usuario al MainActivity.
+ */
+
 public class SplashActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
