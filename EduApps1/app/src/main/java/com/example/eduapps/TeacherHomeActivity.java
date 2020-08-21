@@ -13,6 +13,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
 
     RecyclerView recyclerView;
     String s1[], s2[];
+    Button[] b1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

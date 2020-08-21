@@ -9,7 +9,15 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AgregarSesionActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".AgregarActividadesActivity"></activity>
+        <activity
+            android:name=".SecondActivity"
+            android:label="Recursos"
+            android:parentActivityName=".TeacherHomeActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".AgregarSesionActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".TeacherHomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

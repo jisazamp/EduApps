@@ -24,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
                 intent = new Intent(LoginActivity.this, TeacherHomeActivity.class);
                 intent.putExtra("valor", "hola");
                 startActivity(intent);
+                finish();
             }
         });
     }
