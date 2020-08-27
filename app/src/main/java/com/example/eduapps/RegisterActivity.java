@@ -6,6 +6,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.Toast;
+
+import com.example.eduapps.Modelos.GlobalVariables;
+import com.example.eduapps.Modelos.User;
+
+import java.util.ArrayList;
 
 /*
  * Esta es la vista para registro del usuario.
@@ -15,11 +22,21 @@ import android.widget.Button;
  */
 
 public class RegisterActivity extends AppCompatActivity {
+    // variables globales
+    EditText etName, etPassword, etConfirmPassword;
+    String name, password, confirmPassword;
+    User newUser;
+    boolean userExists = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
+        // initialize edittext
+        etName = (EditText)findViewById(R.id.regName);
+        etPassword = (EditText)findViewById(R.id.regPassword);
+        etConfirmPassword = (EditText)findViewById(R.id.regConfirmPassword);
 
         Button btn_registrar = (Button)findViewById(R.id.registrarButton);
         btn_registrar.setOnClickListener(new View.OnClickListener() {
@@ -27,10 +44,41 @@ public class RegisterActivity extends AppCompatActivity {
             // metodo abstracto que tengo que implementar
             @Override
             public void onClick(View view) {
-                Intent intent;
-                intent = new Intent(RegisterActivity.this, SplashRegister.class);
-                startActivity(intent);
-                finish();
+                // get the values from edittext fields
+                name = etName.getText().toString();
+                password = etPassword.getText().toString();
+                confirmPassword = etConfirmPassword.getText().toString();
+
+                // check if passwords match
+                if (password.equals(confirmPassword)) {
+                    // initialize new user
+                    newUser = new User(name, password);
+
+                    // search if user exists
+                    for (int i = 0; i < GlobalVariables.getInstance().users.size(); i++) {
+                        User aux = GlobalVariables.getInstance().users.get(i);
+                        if (name.equals(aux.getUsername())) {
+                            userExists = true;
+                        }
+                    }
+
+                    // add new user to arraylist
+                    if(!userExists) {
+                        GlobalVariables.getInstance().users.add(newUser);
+
+                        // redirect to home activity
+                        Intent intent;
+                        intent = new Intent(RegisterActivity.this, SplashRegister.class);
+                        startActivity(intent);
+                        finish();
+                    } else {
+                        Toast.makeText(getApplicationContext(),
+                                "El usuario ya existe", Toast.LENGTH_SHORT).show();
+                    }
+                } else {
+                    Toast.makeText(getApplicationContext(),
+                            "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

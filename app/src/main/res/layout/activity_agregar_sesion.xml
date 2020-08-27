@@ -70,8 +70,8 @@
 
                 <TextView
                     android:layout_width="wrap_content"
+                    android:layout_marginLeft="15dp"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
                     android:layout_marginTop="10dp"
                     android:text="Área"
                     android:textSize="15dp"
@@ -89,7 +89,7 @@
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_gravity="center"
+                    android:layout_marginLeft="10dp"
                     android:layout_marginTop="10dp"
                     android:text="Nivel de formación"
                     android:textSize="15dp"
