@@ -5,6 +5,7 @@ import android.app.Application;
 public class SesionClase extends Application {
 
     // Atributos
+    private int Id;
     private String titulo;
     private String descripcion;
     private String area;
@@ -14,8 +15,9 @@ public class SesionClase extends Application {
     private String fechaCierre;
 
     // Constructor
-    public SesionClase(String titulo, String descripcion, String area, String nivelFormacion,
+    public SesionClase(int Id, String titulo, String descripcion, String area, String nivelFormacion,
                        String DBA, String fechaInicio, String fechaCierre) {
+        this.Id = Id;
         this.titulo = titulo;
         this.descripcion = descripcion;
         this.area = area;
@@ -26,6 +28,15 @@ public class SesionClase extends Application {
     }
 
     // Accesores
+
+
+    public int getId() {
+        return Id;
+    }
+
+    public void setId(int id) {
+        Id = id;
+    }
 
     public String getTitulo() {
         return titulo;

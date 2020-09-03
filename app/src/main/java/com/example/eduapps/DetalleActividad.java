@@ -9,9 +9,11 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import org.w3c.dom.Text;
+
 public class DetalleActividad extends AppCompatActivity {
 
-    private TextView tvTitulo, tvDescripcion, tvArea, tvNivelFormacion, tvDba, tvFechainicio,
+    private TextView tvId, tvTitulo, tvDescripcion, tvArea, tvNivelFormacion, tvDba, tvFechainicio,
                     tvFechaCierre;
 
     Button btnVolverDetalles;
@@ -23,6 +25,7 @@ public class DetalleActividad extends AppCompatActivity {
 
         // Recibir parametros
         Bundle parametros        = getIntent().getExtras();
+        int id                   = parametros.getInt(getResources().getString(R.string.pid));
         String titulo            = parametros.getString(getResources().getString(R.string.ptitulo));
         String descripcion       = parametros.getString(getResources().getString(R.string.pproposito));
         String area              = parametros.getString(getResources().getString(R.string.parea));
@@ -32,6 +35,7 @@ public class DetalleActividad extends AppCompatActivity {
         String fechaCierre       = parametros.getString(getResources().getString(R.string.pfechacierre));
 
         // Ya capturamos los datos, ahora para mostrarlos
+        tvId                = (TextView) findViewById(R.id.tvId);
         tvTitulo            = (TextView) findViewById(R.id.tvTitulo);
         tvDescripcion       = (TextView) findViewById(R.id.tvProposito);
         tvArea              = (TextView) findViewById(R.id.tvArea);
@@ -41,6 +45,7 @@ public class DetalleActividad extends AppCompatActivity {
         tvFechaCierre       = (TextView) findViewById(R.id.tvFechaCierre);
 
         // Seteamos los TextView
+        tvId.setText(Integer.toString(id));
         tvTitulo.setText(titulo);
         tvDescripcion.setText(descripcion);
         tvArea.setText(area);
@@ -56,7 +61,6 @@ public class DetalleActividad extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DetalleActividad.this, TeacherHomeActivity.class);
                 startActivity(intent);
-                finish();
             }
         });
     }

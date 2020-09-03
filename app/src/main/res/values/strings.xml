@@ -21,6 +21,7 @@
 
     <string name="pnombre">nombre</string>
 
+    <string name="pid">id</string>
     <string name="ptitulo">titulo</string>
     <string name="pproposito">descripcion</string>
     <string name="parea">area</string>

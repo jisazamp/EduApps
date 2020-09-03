@@ -2,17 +2,24 @@ package com.example.eduapps;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.graphics.Color;
 import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
+import android.text.InputType;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
+import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.TextView;
+
+import com.example.eduapps.Modelos.GlobalVariables;
+import com.example.eduapps.Modelos.SesionClase;
+import com.google.android.material.textfield.TextInputEditText;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -26,29 +33,17 @@ import java.util.Calendar;
 public class AgregarSesionActivity extends AppCompatActivity {
 
     // declaracion de variables
-    Spinner spinner, spinner1;
-    private static final String TAG = "AgregarSesionActivity";
-    private TextView mDisplayDate;
-    private DatePickerDialog.OnDateSetListener mDateSetListener;
+    DatePickerDialog picker;
     Intent intent;
+    TextView tiFechaInicio, etFechaCierre;
+    EditText etTitulo, etProposito, etDba, etArea, etNivelFormacion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_agregar_sesion);
 
-        // intent de los botones
-        Button btn_agregar = (Button)findViewById(R.id.agregarButton);
-        btn_agregar.setOnClickListener(new View.OnClickListener() {
-
-            // metodo abstracto que tengo que implementar
-            @Override
-            public void onClick(View view) {
-                intent = new Intent(AgregarSesionActivity.this, TeacherHomeActivity.class);
-                startActivity(intent);
-            }
-        });
-
+        // Intent boton cancelar
         Button btn_cancelar = (Button)findViewById(R.id.cancelarButton);
         btn_cancelar.setOnClickListener(new View.OnClickListener() {
 
@@ -60,52 +55,82 @@ public class AgregarSesionActivity extends AppCompatActivity {
             }
         });
 
-        // declaracion de los spinner
-        spinner = findViewById(R.id.spinner1);
-        spinner1 = findViewById(R.id.spinner2);
-
-        // datos "quemados" para popular el spinner
-        String[] value = {"Básica", "Media"};
-        ArrayList<String> arrayList = new ArrayList<>(Arrays.asList(value));
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<>(this, R.layout.style_spinner, arrayList);
-        spinner.setAdapter(arrayAdapter);
-
-        // datos "quemados" para popular el spinner1
-        String[] value1 = {"1", "2"};
-        ArrayList<String> arrayList1 = new ArrayList<>(Arrays.asList(value1));
-        ArrayAdapter<String> arrayAdapter1 = new ArrayAdapter<>(this, R.layout.style_spinner, arrayList1);
-        spinner1.setAdapter(arrayAdapter1);
-
-        // inicialización de la variable para seleccionar la fecha de inicio
-        // de la sesión de clase
-        mDisplayDate = (TextView) findViewById(R.id.tvDate);
-
-        // ClickListener que abre una ventana para seleccionar la fecha
-        mDisplayDate.setOnClickListener(new View.OnClickListener() {
+        // Picker para la fecha de inicio
+        tiFechaInicio = (TextView) findViewById(R.id.tiFechaInicio);
+        tiFechaInicio.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                // inicializamos la instancia para que muestre la fecha actual
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
 
-                DatePickerDialog dialog = new DatePickerDialog(
-                        AgregarSesionActivity.this,
-                        android.R.style.Theme_Material_Light_Dialog_MinWidth,
-                        mDateSetListener,
-                        year, month, day);
-
-                //dialog.getWindow().setBackgroundDrawable(new ColorDrawable(Color.WHITE));
-                dialog.show();
+                // picker
+                picker = new DatePickerDialog(AgregarSesionActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                tiFechaInicio.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                picker.show();
             }
         });
 
-        mDateSetListener = new DatePickerDialog.OnDateSetListener() {
+        // Picker para la fecha de cierre
+        etFechaCierre = (TextView) findViewById(R.id.etFechaCierre);
+        etFechaCierre.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onDateSet(DatePicker datePicker, int i, int i1, int i2) {
-                // TO-DO
+            public void onClick(View view) {
+                final Calendar cldr = Calendar.getInstance();
+                int day = cldr.get(Calendar.DAY_OF_MONTH);
+                int month = cldr.get(Calendar.MONTH);
+                int year = cldr.get(Calendar.YEAR);
+
+                // picker
+                picker = new DatePickerDialog(AgregarSesionActivity.this,
+                        new DatePickerDialog.OnDateSetListener() {
+                            @Override
+                            public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth) {
+                                etFechaCierre.setText(dayOfMonth + "/" + (monthOfYear + 1) + "/" + year);
+                            }
+                        }, year, month, day);
+                picker.show();
             }
-        };
+        });
+
+        // Traer los EditText
+        etTitulo         = (EditText) findViewById(R.id.etTitulo);
+        etProposito      = (EditText) findViewById(R.id.etProposito);
+        etDba            = (EditText) findViewById(R.id.etDba);
+        etArea           = (EditText) findViewById(R.id.etArea);
+        etNivelFormacion = (EditText) findViewById(R.id.etNivelFormacion);
+
+        // intent de los botones
+        Button btn_agregar = (Button)findViewById(R.id.agregarButton);
+        btn_agregar.setOnClickListener(new View.OnClickListener() {
+
+            // metodo abstracto que tengo que implementar
+            @Override
+            public void onClick(View view) {
+                intent = new Intent(AgregarSesionActivity.this, TeacherHomeActivity.class);
+
+                // Agregar nueva sesion
+                SesionClase nuevaSesion;
+
+                String titulo         = etTitulo.getText().toString();
+                String proposito      = etProposito.getText().toString();
+                String dba            = etDba.getText().toString();
+                String area           = etArea.getText().toString();
+                String nivelFormacion = etNivelFormacion.getText().toString();
+                
+                nuevaSesion = new SesionClase(10, titulo, proposito, dba, area, nivelFormacion
+                            , tiFechaInicio.getText().toString(), etFechaCierre.getText().toString());
+                GlobalVariables.getInstance().sesiones.add(nuevaSesion);
+
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }

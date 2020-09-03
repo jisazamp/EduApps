@@ -40,7 +40,7 @@
                 android:layout_gravity="center_horizontal">
 
                 <EditText
-                    android:id="@+id/editTitulo"
+                    android:id="@+id/etTitulo"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
@@ -54,7 +54,7 @@
                     android:padding="12dp" />
 
                 <EditText
-                    android:id="@+id/editProposito"
+                    android:id="@+id/etProposito"
                     android:layout_width="300dp"
                     android:singleLine="false"
                     android:layout_height="wrap_content"
@@ -68,44 +68,9 @@
                     android:inputType="textPersonName"
                     android:padding="12dp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_marginLeft="15dp"
-                    android:layout_height="wrap_content"
-                    android:layout_marginTop="10dp"
-                    android:text="Área"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:id="@+id/spinner1"
-                    android:background="@drawable/style_spinner1"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp">
-                </Spinner>
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_marginLeft="10dp"
-                    android:layout_marginTop="10dp"
-                    android:text="Nivel de formación"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
-
-                <Spinner
-                    android:id="@+id/spinner2"
-                    android:background="@drawable/style_spinner1"
-                    android:layout_width="300dp"
-                    android:layout_height="40dp"
-                    android:layout_gravity="center"
-                    android:layout_margin="10dp">
-                </Spinner>
 
                 <EditText
-                    android:id="@+id/editDBA"
+                    android:id="@+id/etDba"
                     android:layout_width="300dp"
                     android:singleLine="false"
                     android:layout_height="wrap_content"
@@ -119,15 +84,67 @@
                     android:inputType="textPersonName"
                     android:padding="12dp" />
 
-                <TextView
-                    android:id="@+id/tvDate"
-                    android:layout_width="wrap_content"
+                <EditText
+                android:id="@+id/etArea"
+                android:layout_width="300dp"
+                android:singleLine="false"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/edit"
+                android:drawableLeft="@drawable/ic_person"
+                android:drawablePadding="10dp"
+                android:ems="10"
+                android:hint="Área"
+                android:inputType="textPersonName"
+                android:padding="12dp" />
+
+                <EditText
+                    android:id="@+id/etNivelFormacion"
+                    android:layout_width="300dp"
+                    android:singleLine="false"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center"
                     android:layout_marginTop="10dp"
-                    android:text="Fecha de inicio"
-                    android:textSize="15dp"
-                    android:textStyle="bold" />
+                    android:background="@drawable/edit"
+                    android:drawableLeft="@drawable/ic_person"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Nivel de formación"
+                    android:inputType="textPersonName"
+                    android:padding="12dp" />
+
+                <EditText
+                    android:id="@+id/tiFechaInicio"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit"
+                    android:drawableLeft="@drawable/ic_calendar"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Fecha de inicio"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="false"/>
+
+                <EditText
+                    android:id="@+id/etFechaCierre"
+                    android:layout_width="300dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:background="@drawable/edit"
+                    android:drawableLeft="@drawable/ic_calendar"
+                    android:drawablePadding="10dp"
+                    android:ems="10"
+                    android:hint="Fecha de cierre"
+                    android:inputType="textPersonName"
+                    android:padding="12dp"
+                    android:clickable="true"
+                    android:focusable="false"/>
 
             </LinearLayout>
 

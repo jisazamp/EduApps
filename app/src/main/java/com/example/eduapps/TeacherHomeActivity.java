@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.Settings;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
@@ -14,7 +15,9 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
+import com.example.eduapps.Modelos.GlobalVariables;
 import com.example.eduapps.Modelos.SesionClase;
+import com.example.eduapps.Modelos.User;
 import com.google.android.material.snackbar.Snackbar;
 
 import java.util.ArrayList;
@@ -30,6 +33,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
 
     // Variables globales
     ArrayList<SesionClase> sesiones;
+    int sessionCount = 0;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,12 +41,16 @@ public class TeacherHomeActivity extends AppCompatActivity {
         setContentView(R.layout.activity_teacher_home);
 
         // Inicializar sesiones
-        sesiones = new ArrayList<SesionClase>();
-        sesiones = fillArray(sesiones);
+        if (GlobalVariables.getInstance().sesiones.size() == 0) {
+            fill();
+            sesiones = GlobalVariables.getInstance().sesiones;
+        } else {
+            sesiones = GlobalVariables.getInstance().sesiones;
+        }
 
         // Traemos los nombres
         ArrayList<String> nombresSesion = new ArrayList<>();
-        for (SesionClase sesion : sesiones) {
+        for (SesionClase sesion : GlobalVariables.getInstance().sesiones) {
             nombresSesion.add(sesion.getTitulo());
         }
 
@@ -55,6 +63,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(TeacherHomeActivity.this, DetalleActividad.class);
+                intent.putExtra(getResources().getString(R.string.pid), sesiones.get(i).getId());
                 intent.putExtra(getResources().getString(R.string.ptitulo), sesiones.get(i).getTitulo());
                 intent.putExtra(getResources().getString(R.string.pproposito), sesiones.get(i).getDescripcion());
                 intent.putExtra(getResources().getString(R.string.parea), sesiones.get(i).getArea());
@@ -68,9 +77,10 @@ public class TeacherHomeActivity extends AppCompatActivity {
 
         // Bundler para recibir el intent
         Bundle parametros = getIntent().getExtras();
-        String usuario_logueado = parametros.getString(getResources().getString(R.string.pnombre));
-
-        Toast.makeText(getBaseContext(), usuario_logueado, Toast.LENGTH_LONG).show();
+        if (parametros != null) {
+            String usuario_logueado = parametros.getString(getResources().getString(R.string.pnombre));
+            Toast.makeText(getBaseContext(), usuario_logueado, Toast.LENGTH_LONG).show();
+        }
 
         // intent para el boton de registrar sesion
         Button btn_registrar_sesion = (Button)findViewById(R.id.agregarSesionButton);
@@ -86,38 +96,20 @@ public class TeacherHomeActivity extends AppCompatActivity {
         });
     }
 
-    public ArrayList<SesionClase> fillArray(ArrayList<SesionClase> sesiones) {
-        sesiones.add(new SesionClase("Sesion 1", "Descripcion 1", "Area 1"
-                ,"NF1", "DBA1", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 1", "Descripcion 1", "Area 1"
-                ,"NF1", "DBA1", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
-        sesiones.add(new SesionClase("Sesion 2", "Descripcion 2", "Area 2"
-                ,"NF2", "DBA2", "02/10/1996"
-                ,"02/10/1996"));
+    public void fill() {
+        for (int i = 0; i < 4; i++) {
+            SesionClase sesion = new SesionClase(sessionCount, "Sesion 2", "Descripcion 2", "Area 2"
+                    ,"NF2", "DBA2", "02/10/1996"
+                    ,"02/10/1996");
+            sessionCount++;
 
-        return sesiones;
+            SesionClase sesion1 = new SesionClase(sessionCount,"Sesion 1", "Descripcion 2", "Area 2"
+                    ,"NF2", "DBA2", "02/10/1996"
+                    ,"02/10/1996");
+            sessionCount++;
+
+            GlobalVariables.getInstance().sesiones.add(sesion);
+            GlobalVariables.getInstance().sesiones.add(sesion1);
+        }
     }
 }
