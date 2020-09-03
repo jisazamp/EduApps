@@ -4,6 +4,7 @@ import java.util.ArrayList;
 
 public class GlobalVariables {
     public ArrayList<User> users;
+    public ArrayList<SesionClase> sesiones;
 
     /*public ArrayList<User> getUsers() {
         return users;
@@ -16,6 +17,7 @@ public class GlobalVariables {
 
     private GlobalVariables() {
         users = new ArrayList<User>();
+        sesiones = new ArrayList<SesionClase>();
     }
 
     private static GlobalVariables instance;

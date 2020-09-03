@@ -68,7 +68,8 @@ public class RegisterActivity extends AppCompatActivity {
 
                         // redirect to home activity
                         Intent intent;
-                        intent = new Intent(RegisterActivity.this, SplashRegister.class);
+                        intent = new Intent(RegisterActivity.this, TeacherHomeActivity.class);
+                        intent.putExtra(getResources().getString(R.string.pnombre), newUser.getUsername().toString());
                         startActivity(intent);
                         finish();
                     } else {

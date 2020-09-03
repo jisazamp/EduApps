@@ -18,4 +18,14 @@
         <item>Esta es una descripción.</item>
         <item>Esta es una descripción.</item>
     </string-array>
+
+    <string name="pnombre">nombre</string>
+
+    <string name="ptitulo">titulo</string>
+    <string name="pproposito">descripcion</string>
+    <string name="parea">area</string>
+    <string name="pnivelformacion">nivel formacion</string>
+    <string name="pdba">dba</string>
+    <string name="pfechainicio">fecha inicio</string>
+    <string name="pfechacierre">fecha cierre</string>
 </resources>

@@ -70,6 +70,7 @@ public class LoginActivity extends AppCompatActivity {
 
                     Intent intent;
                     intent = new Intent(LoginActivity.this, TeacherHomeActivity.class);
+                    intent.putExtra(getResources().getString(R.string.pnombre), username.getText().toString());
                     startActivity(intent);
                     finish();
                 } else {

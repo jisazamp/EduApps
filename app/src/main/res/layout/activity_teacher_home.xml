@@ -27,38 +27,18 @@
             android:textSize="25dp"
             android:textStyle="bold" />
 
-        <com.google.android.material.tabs.TabLayout
+
+        <ListView
+            android:id="@+id/lstSesiones"
             android:layout_width="match_parent"
-            android:layout_height="30dp">
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Creadas" />
-
-            <com.google.android.material.tabs.TabItem
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Publicadas" />
-        </com.google.android.material.tabs.TabLayout>
-
-        <ScrollView
-            android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:layout_margin="20dp">
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/recyclerView"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_margin="10dp"/>
-        </ScrollView>
+            android:layout_height="300dp" />
 
         <Button
             android:id="@+id/agregarSesionButton"
             android:layout_width="220dp"
             android:layout_height="40dp"
             android:layout_marginBottom="30dp"
+            android:layout_marginTop="15dp"
             android:layout_gravity="center"
             android:background="@drawable/button"
             android:text="Agregar sesión de clase"
