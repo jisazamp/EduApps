@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -33,6 +34,7 @@ public class LoginActivity extends AppCompatActivity {
 
         username = (EditText) findViewById(R.id.etUsername);
         password = (EditText) findViewById(R.id.etPassword);
+        password.setTransformationMethod(new PasswordTransformationMethod());
         btn_iniciar_sesion = (Button)findViewById(R.id.iniciarSesionButton);
 
         btn_iniciar_sesion.setOnClickListener(new View.OnClickListener() {

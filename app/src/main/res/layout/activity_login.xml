@@ -50,7 +50,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="15dp"
             android:background="@drawable/edit"
-            android:drawableLeft="@drawable/ic_person"
+            android:drawableLeft="@drawable/ic_lock"
             android:drawablePadding="10dp"
             android:ems="10"
             android:hint="Contraseña"

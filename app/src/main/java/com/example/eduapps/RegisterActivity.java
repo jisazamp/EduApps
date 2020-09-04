@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -36,7 +37,9 @@ public class RegisterActivity extends AppCompatActivity {
         // initialize edittext
         etName = (EditText)findViewById(R.id.regName);
         etPassword = (EditText)findViewById(R.id.regPassword);
+        etPassword.setTransformationMethod(new PasswordTransformationMethod());
         etConfirmPassword = (EditText)findViewById(R.id.regConfirmPassword);
+        etConfirmPassword.setTransformationMethod(new PasswordTransformationMethod());
 
         Button btn_registrar = (Button)findViewById(R.id.registrarButton);
         btn_registrar.setOnClickListener(new View.OnClickListener() {

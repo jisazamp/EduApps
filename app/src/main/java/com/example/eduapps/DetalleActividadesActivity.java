@@ -26,7 +26,7 @@ public class DetalleActividadesActivity extends AppCompatActivity {
         Bundle parametros         = getIntent().getExtras();
         if (parametros != null) {
             int actividadId           = parametros.getInt(getResources().getString((R.string.pactid)));
-            int sesionId              = parametros.getInt(getResources().getString(R.string.pactsesionid));
+            final int sesionId              = parametros.getInt(getResources().getString(R.string.pactsesionid));
             String actividadTitulo    = parametros.getString(getResources().getString(R.string.pactnombre));
             String actividadProposito = parametros.getString(getResources().getString(R.string.pactproposito));
             String actividadTiempo    = parametros.getString(getResources().getString(R.string.pacttiempo));
@@ -51,6 +51,18 @@ public class DetalleActividadesActivity extends AppCompatActivity {
             tvActividadTitulo.setText("Titulo: " + act.getTitulo());
             tvActividadProposito.setText("Propósito: " + act.getProposito());
             tvActividadTiempo.setText("Tiempo: " + act.getTiempo());
+
+
+            Button btnVolverActividadesDetalle = (Button) findViewById(R.id.btnVolverActividadesDetalle);
+            btnVolverActividadesDetalle.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent(DetalleActividadesActivity.this, AgregarActividadesActivity.class);
+                    intent.putExtra(getResources().getString(R.string.pactsesionid), sesionId);
+                    startActivity(intent);
+                    finish();
+                }
+            });
         }
     }
 }

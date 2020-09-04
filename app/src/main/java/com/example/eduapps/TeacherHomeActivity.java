@@ -1,19 +1,25 @@
 package com.example.eduapps;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.provider.Settings;
 import android.util.Log;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
+import android.widget.Toolbar;
 
 import com.example.eduapps.Modelos.GlobalVariables;
 import com.example.eduapps.Modelos.SesionClase;
@@ -34,11 +40,17 @@ public class TeacherHomeActivity extends AppCompatActivity {
     // Variables globales
     ArrayList<SesionClase> sesiones;
     int sessionCount = 0;
+    private androidx.appcompat.widget.Toolbar mToolbar;
 
+    @RequiresApi(api = Build.VERSION_CODES.LOLLIPOP)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_teacher_home);
+
+        mToolbar = findViewById(R.id.main_toolbar);
+        setSupportActionBar(mToolbar);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
 
         // Inicializar sesiones
         if (GlobalVariables.getInstance().sesiones.size() == 0) {
@@ -94,6 +106,30 @@ public class TeacherHomeActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+    }
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        super.onCreateOptionsMenu(menu);
+        getMenuInflater().inflate(R.menu.main_menu, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+        int id = item.getItemId();
+
+        if (id == R.id.menuLogOut) {
+            Intent intent = new Intent(TeacherHomeActivity.this, MainActivity.class);
+            startActivity(intent);
+            finish();
+        }
+        else {
+            Intent intent = new Intent(TeacherHomeActivity.this, AboutActivity.class);
+            startActivity(intent);
+        }
+
+        return super.onOptionsItemSelected(item);
     }
 
     public void fill() {

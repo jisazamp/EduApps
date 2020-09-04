@@ -57,5 +57,20 @@ public class NuevaActividadActivity extends AppCompatActivity {
                 finish();
             }
         });
+
+        Button btnNActVolver = (Button)findViewById(R.id.btnNActVolver);
+        btnNActVolver.setOnClickListener(new View.OnClickListener() {
+
+            // metodo abstracto que tengo que implementar
+            @Override
+            public void onClick(View view) {
+                Intent intent;
+                intent = new Intent(NuevaActividadActivity.this, AgregarActividadesActivity.class);
+                intent.putExtra(getResources().getString(R.string.pid), sesionId);
+
+                startActivity(intent);
+                finish();
+            }
+        });
     }
 }
