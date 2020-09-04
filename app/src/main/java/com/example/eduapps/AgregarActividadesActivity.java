@@ -23,6 +23,7 @@ public class AgregarActividadesActivity extends AppCompatActivity {
     // Variables globales
     ArrayList<Actividad> actividades;
     int actividadesCount = 0;
+    int sesionId;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -31,12 +32,12 @@ public class AgregarActividadesActivity extends AppCompatActivity {
 
         // Recibir parametros
         Bundle parametros        = getIntent().getExtras();
-        int sesionId                  = parametros.getInt(getResources().getString(R.string.pid));
+        sesionId       = parametros.getInt(getResources().getString(R.string.pid));
         Toast.makeText(getBaseContext(), Integer.toString(sesionId), Toast.LENGTH_LONG).show();
 
         // Inicializar sesiones
         if (GlobalVariables.getInstance().actividades.size() == 0) {
-            fillActividades();
+            //fillActividades();
             actividades = GlobalVariables.getInstance().actividades;
         } else {
             actividades = GlobalVariables.getInstance().actividades;
@@ -64,6 +65,7 @@ public class AgregarActividadesActivity extends AppCompatActivity {
                 intent.putExtra(getResources().getString(R.string.pactnombre), actividades.get(i).getTitulo());
                 intent.putExtra(getResources().getString(R.string.pactproposito), actividades.get(i).getProposito());
                 intent.putExtra(getResources().getString(R.string.pacttiempo), actividades.get(i).getTiempo());
+
                 startActivity(intent);
             }
         });
@@ -77,18 +79,20 @@ public class AgregarActividadesActivity extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent;
                 intent = new Intent(AgregarActividadesActivity.this, NuevaActividadActivity.class);
+                intent.putExtra(getResources().getString(R.string.pactsesionid), sesionId);
                 startActivity(intent);
+                finish();
             }
         });
     }
 
-    public void fillActividades() {
-        for (int i = 0; i < 4; i++) {
-            Actividad actividad = new Actividad(GlobalVariables.getInstance().actividadesId, 1
-                    , "Dummy", "Dummy purpose", "25mins");
-            GlobalVariables.getInstance().actividadesId++;
-
-            GlobalVariables.getInstance().actividades.add(actividad);
-        }
-    }
+//    public void fillActividades() {
+//        for (int i = 0; i < 4; i++) {
+//            Actividad actividad = new Actividad(actividadesCount, 1
+//                    , "Dummy", "Dummy purpose", "25mins");
+//            actividadesCount++;
+//
+//            GlobalVariables.getInstance().actividades.add(actividad);
+//        }
+//    }
 }

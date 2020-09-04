@@ -46,14 +46,14 @@ public class DetalleActividad extends AppCompatActivity {
         tvFechaCierre       = (TextView) findViewById(R.id.tvFechaCierre);
 
         // Seteamos los TextView
-        tvId.setText(Integer.toString(id));
-        tvTitulo.setText(titulo);
-        tvDescripcion.setText(descripcion);
-        tvArea.setText(area);
-        tvNivelFormacion.setText(nivelFormacion);
-        tvDba.setText(dba);
-        tvFechainicio.setText(fechaInicio);
-        tvFechaCierre.setText(fechaCierre);
+        tvId.setText("ID: " + Integer.toString(id));
+        tvTitulo.setText("Titulo: " + titulo);
+        tvDescripcion.setText("Descripción: " + descripcion);
+        tvArea.setText("Área: " + area);
+        tvNivelFormacion.setText("Nivel formación: " + nivelFormacion);
+        tvDba.setText("DBA: " + dba);
+        tvFechainicio.setText("Fecha inicio: " + fechaInicio);
+        tvFechaCierre.setText("Fecha cierre: " + fechaCierre);
 
         // Intent para el boton
         btnVolverDetalles = (Button) findViewById(R.id.btnVolverDetalle);

@@ -8,10 +8,14 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 
+import com.example.eduapps.Modelos.Actividad;
+import com.example.eduapps.Modelos.GlobalVariables;
+
 public class DetalleActividadesActivity extends AppCompatActivity {
 
     TextView tvActividadId, tvActividadSesionId, tvActividadTitulo, tvActividadProposito,
              tvActividadTiempo;
+    Actividad act;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +31,12 @@ public class DetalleActividadesActivity extends AppCompatActivity {
             String actividadProposito = parametros.getString(getResources().getString(R.string.pactproposito));
             String actividadTiempo    = parametros.getString(getResources().getString(R.string.pacttiempo));
 
+            // buscamos la actividad
+            for (Actividad actividad : GlobalVariables.getInstance().actividades) {
+                if (actividad.getSesionId() == sesionId) {
+                    act = actividad;
+                }
+            }
 
             // iniciamos los textview
             tvActividadId           = (TextView) findViewById(R.id.tvActividadId);
@@ -36,11 +46,11 @@ public class DetalleActividadesActivity extends AppCompatActivity {
             tvActividadTiempo       = (TextView) findViewById(R.id.tvActividadTiempo);
 
             // seteamos los textview
-            tvActividadId.setText(Integer.toString(actividadId));
-            tvActividadSesionId.setText(Integer.toString(sesionId));
-            tvActividadTitulo.setText(actividadTitulo);
-            tvActividadProposito.setText(actividadProposito);
-            tvActividadTiempo.setText(actividadTiempo);
+            tvActividadId.setText("ID: " + Integer.toString(act.getId()));
+            tvActividadSesionId.setText("ID Sesión: " + Integer.toString(act.getSesionId()));
+            tvActividadTitulo.setText("Titulo: " + act.getTitulo());
+            tvActividadProposito.setText("Propósito: " + act.getProposito());
+            tvActividadTiempo.setText("Tiempo: " + act.getTiempo());
         }
     }
 }
