@@ -123,8 +123,8 @@ public class AgregarSesionActivity extends AppCompatActivity {
                 String dba            = etDba.getText().toString();
                 String area           = etArea.getText().toString();
                 String nivelFormacion = etNivelFormacion.getText().toString();
-                
-                nuevaSesion = new SesionClase(10, titulo, proposito, dba, area, nivelFormacion
+
+                nuevaSesion = new SesionClase(++GlobalVariables.getInstance().sesionesId, titulo, proposito, dba, area, nivelFormacion
                             , tiFechaInicio.getText().toString(), etFechaCierre.getText().toString());
                 GlobalVariables.getInstance().sesiones.add(nuevaSesion);
 

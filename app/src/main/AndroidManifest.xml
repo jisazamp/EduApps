@@ -9,8 +9,16 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetalleActividad" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
-        <activity android:name=".AgregarActividadesActivity" />
+        <activity android:name=".NuevaActividadActivity"></activity>
+        <activity
+            android:name=".DetalleActividadesActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".DetalleActividad"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".AgregarActividadesActivity"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
             android:name=".AgregarSesionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />

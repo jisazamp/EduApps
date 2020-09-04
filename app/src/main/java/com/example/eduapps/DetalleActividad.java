@@ -17,6 +17,7 @@ public class DetalleActividad extends AppCompatActivity {
                     tvFechaCierre;
 
     Button btnVolverDetalles;
+    Button btnAgregarActividad;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,7 +26,7 @@ public class DetalleActividad extends AppCompatActivity {
 
         // Recibir parametros
         Bundle parametros        = getIntent().getExtras();
-        int id                   = parametros.getInt(getResources().getString(R.string.pid));
+        final int id             = parametros.getInt(getResources().getString(R.string.pid));
         String titulo            = parametros.getString(getResources().getString(R.string.ptitulo));
         String descripcion       = parametros.getString(getResources().getString(R.string.pproposito));
         String area              = parametros.getString(getResources().getString(R.string.parea));
@@ -61,6 +62,17 @@ public class DetalleActividad extends AppCompatActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(DetalleActividad.this, TeacherHomeActivity.class);
                 startActivity(intent);
+            }
+        });
+
+        btnAgregarActividad = (Button) findViewById(R.id.btnAgregarActividad);
+        btnAgregarActividad.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(DetalleActividad.this, AgregarActividadesActivity.class);
+                intent.putExtra(getResources().getString(R.string.pid), id);
+                startActivity(intent);
+                finish();
             }
         });
     }

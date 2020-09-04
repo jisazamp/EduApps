@@ -6,4 +6,43 @@
     android:layout_height="match_parent"
     tools:context=".AgregarActividadesActivity">
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp">
+
+        <ImageView
+            android:id="@+id/eduapps_logo"
+            android:layout_width="283dp"
+            android:layout_height="124dp"
+            android:layout_gravity="center"
+            app:srcCompat="@drawable/eduapps" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="Actividades de esta sesión"
+            android:textSize="25dp"
+            android:textStyle="bold" />
+
+
+        <ListView
+            android:id="@+id/lstActividades"
+            android:layout_width="match_parent"
+            android:layout_height="300dp" />
+
+        <Button
+            android:id="@+id/btnAgregarActividad"
+            android:layout_width="220dp"
+            android:layout_height="40dp"
+            android:layout_marginBottom="30dp"
+            android:layout_marginTop="15dp"
+            android:layout_gravity="center"
+            android:background="@drawable/button"
+            android:text="Agregar nueva actividad"
+            android:textColor="#fff" />
+    </LinearLayout>
+
 </androidx.constraintlayout.widget.ConstraintLayout>

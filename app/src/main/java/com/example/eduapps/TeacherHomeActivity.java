@@ -79,7 +79,7 @@ public class TeacherHomeActivity extends AppCompatActivity {
         Bundle parametros = getIntent().getExtras();
         if (parametros != null) {
             String usuario_logueado = parametros.getString(getResources().getString(R.string.pnombre));
-            Toast.makeText(getBaseContext(), usuario_logueado, Toast.LENGTH_LONG).show();
+                Toast.makeText(getBaseContext(), usuario_logueado, Toast.LENGTH_LONG).show();
         }
 
         // intent para el boton de registrar sesion

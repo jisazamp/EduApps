@@ -29,4 +29,10 @@
     <string name="pdba">dba</string>
     <string name="pfechainicio">fecha inicio</string>
     <string name="pfechacierre">fecha cierre</string>
+
+    <string name="pactid">id actividad</string>
+    <string name="pactsesionid">id sesion</string>
+    <string name="pactnombre">nombre</string>
+    <string name="pactproposito">proposito</string>
+    <string name="pacttiempo">tiempo</string>
 </resources>

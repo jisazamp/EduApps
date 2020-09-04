@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".DetalleActividad">
+    tools:context=".DetalleActividadesActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -25,12 +25,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="Detalle sesión"
+            android:text="Detalle actividad"
             android:textSize="25dp"
             android:textStyle="bold" />
 
         <TextView
-            android:id="@+id/tvId"
+            android:id="@+id/tvActividadId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -38,7 +38,7 @@
             android:layout_marginLeft="20dp"/>
 
         <TextView
-            android:id="@+id/tvTitulo"
+            android:id="@+id/tvActividadSesionId"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -46,7 +46,7 @@
             android:layout_marginLeft="20dp"/>
 
         <TextView
-            android:id="@+id/tvProposito"
+            android:id="@+id/tvActividadTitulo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -54,7 +54,7 @@
             android:layout_marginLeft="20dp"/>
 
         <TextView
-            android:id="@+id/tvArea"
+            android:id="@+id/tvActividadProposito"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -62,50 +62,15 @@
             android:layout_marginLeft="20dp"/>
 
         <TextView
-            android:id="@+id/tvNivelFormacion"
+            android:id="@+id/tvActividadTiempo"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
             android:textSize="15dp"
             android:layout_marginLeft="20dp"/>
-
-        <TextView
-            android:id="@+id/tvDba"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textSize="15dp"
-            android:layout_marginLeft="20dp"/>
-
-        <TextView
-            android:id="@+id/tvFechaInicio"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textSize="15dp"
-            android:layout_marginLeft="20dp"/>
-
-        <TextView
-            android:id="@+id/tvFechaCierre"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center_vertical"
-            android:textSize="15dp"
-            android:layout_marginLeft="20dp"/>
-
 
         <Button
-            android:id="@+id/btnAgregarActividad"
-            android:layout_width="130dp"
-            android:layout_height="40dp"
-            android:layout_marginTop="20dp"
-            android:layout_gravity="center_horizontal"
-            android:background="@drawable/button"
-            android:text="Actividades"
-            android:textColor="#fff" />
-
-        <Button
-            android:id="@+id/btnVolverDetalle"
+            android:id="@+id/btnVolverActividadesDetalle"
             android:layout_width="130dp"
             android:layout_gravity="center_horizontal"
             android:layout_height="40dp"
