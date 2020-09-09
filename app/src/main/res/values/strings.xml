@@ -35,4 +35,12 @@
     <string name="pactnombre">nombre</string>
     <string name="pactproposito">proposito</string>
     <string name="pacttiempo">tiempo</string>
+
+    <string name="text_about">Esta es una aplicación realizada por Juan Pablo Isaza,
+    estudiante de Ingeniería de Sistemas e informática de la Universidad Pontificia Bolivariana
+        en Medellín.\n\n
+
+        Realizada como primer proyecto para el curso de Aplicaciones Móviles en el segundo
+        semestre de 2020.
+    </string>
 </resources>

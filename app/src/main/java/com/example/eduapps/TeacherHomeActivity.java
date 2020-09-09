@@ -62,7 +62,8 @@ public class TeacherHomeActivity extends AppCompatActivity {
 
         // Traemos los nombres
         ArrayList<String> nombresSesion = new ArrayList<>();
-        for (SesionClase sesion : GlobalVariables.getInstance().sesiones) {
+        ArrayList<SesionClase> sesionesAux = GlobalVariables.getInstance().sesiones;
+        for (SesionClase sesion : sesionesAux) {
             nombresSesion.add(sesion.getTitulo());
         }
 
@@ -130,6 +131,11 @@ public class TeacherHomeActivity extends AppCompatActivity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onBackPressed() {
+        moveTaskToBack(false);
     }
 
     public void fill() {
