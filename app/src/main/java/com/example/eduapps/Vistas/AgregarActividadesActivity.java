@@ -1,10 +1,9 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -14,7 +13,7 @@ import android.widget.Toast;
 
 import com.example.eduapps.Modelos.Actividad;
 import com.example.eduapps.Modelos.GlobalVariables;
-import com.example.eduapps.Modelos.SesionClase;
+import com.example.eduapps.R;
 
 import java.util.ArrayList;
 

@@ -1,28 +1,20 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
-import android.text.InputType;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.EditText;
-import android.widget.Spinner;
 import android.widget.TextView;
 
 import com.example.eduapps.Modelos.GlobalVariables;
 import com.example.eduapps.Modelos.SesionClase;
-import com.google.android.material.textfield.TextInputEditText;
+import com.example.eduapps.R;
 
-import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Calendar;
 
 /*

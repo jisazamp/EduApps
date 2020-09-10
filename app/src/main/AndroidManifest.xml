@@ -9,27 +9,27 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".AboutActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
+        <activity android:name=".Vistas.AboutActivity" android:theme="@style/Theme.AppCompat.Light.NoActionBar"></activity>
         <activity
-            android:name=".NuevaActividadActivity"
+            android:name=".Vistas.NuevaActividadActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".DetalleActividadesActivity"
+            android:name=".Vistas.DetalleActividadesActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".DetalleActividad"
+            android:name=".Vistas.DetalleActividad"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AgregarActividadesActivity"
+            android:name=".Vistas.AgregarActividadesActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".AgregarSesionActivity"
+            android:name=".Vistas.AgregarSesionActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".TeacherHomeActivity"
+            android:name=".Vistas.TeacherHomeActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".SplashActivity"
+            android:name=".Vistas.SplashActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -38,16 +38,16 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".SplashRegister"
+            android:name=".Vistas.SplashRegister"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".RegisterActivity"
+            android:name=".Vistas.RegisterActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".LoginActivity"
+            android:name=".Vistas.LoginActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
         <activity
-            android:name=".MainActivity"
+            android:name=".Vistas.MainActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

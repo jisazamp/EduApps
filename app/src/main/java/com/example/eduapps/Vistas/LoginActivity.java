@@ -1,4 +1,4 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
@@ -14,6 +14,7 @@ import android.widget.Toast;
 
 import com.example.eduapps.Modelos.GlobalVariables;
 import com.example.eduapps.Modelos.User;
+import com.example.eduapps.R;
 
 /*
  * Esta es la vista para inicio de sesión del usuario.

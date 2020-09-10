@@ -1,4 +1,4 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.example.eduapps.Modelos.Actividad;
 import com.example.eduapps.Modelos.GlobalVariables;
+import com.example.eduapps.R;
 
 public class DetalleActividadesActivity extends AppCompatActivity {
 

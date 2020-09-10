@@ -1,13 +1,12 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
-import android.os.Looper;
-import android.widget.ImageView;
-import android.widget.Toast;
+
+import com.example.eduapps.R;
 
 /*
  * Esta es la vista para el splash que se

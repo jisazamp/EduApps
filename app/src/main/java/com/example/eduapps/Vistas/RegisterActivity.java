@@ -1,4 +1,4 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,8 +12,7 @@ import android.widget.Toast;
 
 import com.example.eduapps.Modelos.GlobalVariables;
 import com.example.eduapps.Modelos.User;
-
-import java.util.ArrayList;
+import com.example.eduapps.R;
 
 /*
  * Esta es la vista para registro del usuario.

@@ -2,10 +2,10 @@ package com.example.eduapps.Modelos;
 
 import android.app.Application;
 
-import java.util.ArrayList;
 
 public class User extends Application {
     // atributos
+    private int id;
     private String username;
     private String password;
 
@@ -30,5 +30,13 @@ public class User extends Application {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 }

@@ -1,4 +1,4 @@
-package com.example.eduapps;
+package com.example.eduapps.Vistas;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -11,7 +11,7 @@ import android.widget.Toast;
 
 import com.example.eduapps.Modelos.Actividad;
 import com.example.eduapps.Modelos.GlobalVariables;
-import com.example.eduapps.Modelos.SesionClase;
+import com.example.eduapps.R;
 
 public class NuevaActividadActivity extends AppCompatActivity {
 
